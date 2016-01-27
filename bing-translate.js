@@ -40,8 +40,9 @@ function getLanguageNames() {
     }
     var languageCodes = "[\"" + langs.toString().replace(/\,/gi, "\",\"") + "\"]";
     var s = document.createElement("script");
-    s.src = "/web/20120109061758/http://api.microsofttranslator.com/V2/Ajax.svc/GetLanguageNames?oncomplete=getLanguageName&appId=" + token +
-        "&locale=en&languageCodes=" + languageCodes;
+    s.src = "/web/20120109061758/http://api.microsofttranslator.com/V2/Ajax.svc/GetLanguageNames?oncomplete=getLanguageName&appId=" 
+      	+ token + "&locale=en&languageCodes=" + languageCodes;
+  
     document.getElementsByTagName("head")[0].appendChild(s);
 }
 
@@ -53,8 +54,8 @@ function getTranslations() {
     var text = document.getElementById('txtValue').value;
     var getTranslate = function(languageTo) {
         var s = document.createElement("script");
-        s.src = "/web/20120109061758/http://api.microsofttranslator.com/V2/Ajax.svc/GetTranslations?oncomplete=translationCallback&appId=" + token +
-            "&text=" + text + "&from=" + languageFrom + "&to=" + languageTo + "&maxTranslations=5&options=" + options;
+        s.src = "/web/20120109061758/http://api.microsofttranslator.com/V2/Ajax.svc/GetTranslations?oncomplete=translationCallback&appId="
+        + token + "&text=" + text + "&from=" + languageFrom + "&to=" + languageTo + "&maxTranslations=5&options=" + options;
 
         document.getElementsByTagName("head")[0].appendChild(s);
     };
@@ -85,4 +86,4 @@ function getTranslations() {
     getTranslate(langs[0]);
 }
 
-   getLanguageNames();
+getLanguageNames();
